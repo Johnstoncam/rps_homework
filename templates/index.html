@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="display-results">
+    {% if result == None %}
+        <div class="player1">Player 1: {{player1.name}} chose {{player1.choice}}</div>
+        <div class="player2">Player 2: {{player2.name}} chose {{player2.choice}}</div>
+        <br>
+        <div id="result-none">It's a tie!</div>
+    {% elif result != "Not a valid choice." %}
+        <div class="player1">Player 1: {{player1.name}} chose {{player1.choice}}</div>
+        <div class="player2">Player 2: {{player2.name}} chose {{player2.choice}}</div>
+        <br>
+        <div id="result">The winner is {{result.name}}!</div>
+    {% else %}
+        <div id="result-not-valid">Not a valid choice! Please choose either rock, paper, or scissors.</div>
+    {% endif %}
+</section>
+
+{% endblock %}
